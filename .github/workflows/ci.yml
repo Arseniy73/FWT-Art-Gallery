@@ -27,8 +27,8 @@ jobs:
         #  git config --global user.name 'Arseniy Korzhov'
         #  git config --global user.email 'transporter777@mail.ru'
   
-      - name: git username
-        run: git config --global user.name
+      #- name: git username
+       # run: git config --global user.name
         
       # Runs a single command using the runners shell
       - name: Deploy to gh-pages
