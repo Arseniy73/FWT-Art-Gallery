@@ -22,9 +22,13 @@ jobs:
       
       - name: npm install
         run: npm i
-
+      - name: Commit report
+        run: |
+          git config --global user.name 'Arseniy Korzhov'
+          git config --global user.email 'transporter777@mail.ru'
+  
       - name: git username
-        run: git config user.name
+        run: git config --global user.name
         
       # Runs a single command using the runners shell
       - name: Deploy to gh-pages
