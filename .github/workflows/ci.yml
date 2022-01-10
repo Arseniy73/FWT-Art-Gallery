@@ -22,14 +22,16 @@ jobs:
       
       - name: npm install
         run: npm i
-      - name: Commit report
-        run: |
-          git config --global user.name 'Arseniy Korzhov'
-          git config --global user.email 'transporter777@mail.ru'
+      #- name: Commit report
+       # run: |
+        #  git config --global user.name 'Arseniy Korzhov'
+        #  git config --global user.email 'transporter777@mail.ru'
   
       - name: git username
         run: git config --global user.name
         
       # Runs a single command using the runners shell
       - name: Deploy to gh-pages
-        run: npm run deploy
+        run: | 
+            git remote set-url origin https://git:${{ secrets.ACCESS_TOKEN }}@github.com/FWT-Art-Gallery.git
+            npm run deploy
