@@ -33,5 +33,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Deploy to gh-pages
         run: | 
-            git remote set-url origin https://git:${{ secrets.ACCESS_TOKEN }}@github.com/Arseniy73/FWT-Art-Gallery.git
+            git remote set-url origin https://git:${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
             npm run deploy
