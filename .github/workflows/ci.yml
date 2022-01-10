@@ -23,6 +23,9 @@ jobs:
       - name: npm install
         run: npm i
 
+      - name: git username
+        run: git config user.name
+        
       # Runs a single command using the runners shell
       - name: Deploy to gh-pages
         run: npm run deploy
