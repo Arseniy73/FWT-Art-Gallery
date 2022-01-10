@@ -19,7 +19,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      
+      - name: npm install
+        run: npm i
+      #- name: Commit report
+       # run: |
+        #  git config --global user.name 'Arseniy Korzhov'
+        #  git config --global user.email 'transporter777@mail.ru'
+  
+      #- name: git username
+       # run: git config --global user.name
+        
       # Runs a single command using the runners shell
       - name: Deploy to gh-pages
-        run: npm run deploy
+        run: | 
+            git remote set-url origin https://git:${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
+            npm run deploy
